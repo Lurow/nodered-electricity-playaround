@@ -1,0 +1,38 @@
+<script type="text/javascript">
+  RED.nodes.registerType('electricity', {
+    category: 'Smart Home',
+    color: '#3FADB5',
+    defaults: {
+      name: { value: '' },
+      from: { value: new Date(new Date().setFullYear(new Date().getFullYear() - 1)) },
+      until: { value: new Date() }
+    },
+    inputs: 0,
+    outputs: 2,
+    icon: 'bridge.png',
+    label: function() {
+      return this.name || 'electricity'
+    }
+  })
+</script>
+
+<script type="text/x-red" data-template-name="electricity">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+      <label for="node-input-from"><i class="icon-tag"></i> From</label>
+      <input type="date" id="node-input-from" placeholder="2018-11-18">
+  </div>
+  <div class="form-row">
+    <label for="node-input-until"><i class="icon-tag"></i> Until</label>
+    <input type="date" id="node-input-until" placeholder="2019-01-30">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="electricity">
+  <p>Gets the daily-electricity and historical electricity data from a predefined database-endpoint.
+      <br> <b>Output: </b> pushes electricity-values every hour. <b>Output 2: </b> pushes historical-values every hour.
+  </p>
+</script>

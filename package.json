@@ -1,0 +1,21 @@
+{
+  "name": "node-red-fraunhofer-elec",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\""
+  },
+  "node-red": {
+    "nodes": {
+      "electricity": "electricity.js"
+    }
+  },
+  "dependencies": {
+    "cron": "^1.7.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "node-red": "^0.20.5",
+    "node-red-node-test-helper": "^0.2.2"
+  }
+}
